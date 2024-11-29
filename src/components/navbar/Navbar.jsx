@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { ShoppingCart, AlignJustify, X, Plus, Briefcase, User, Menu, LogOut, LayoutDashboard, BaggageClaim, Package } from "lucide-react";
+import LogoIcon from "../../Images/logo/LogoIcon.png"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { gsap } from "gsap";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -69,8 +70,12 @@ useEffect(()=>{
                     <button onClick={() => SetOpenMenu(true)} className={`lg:hidden  inline-block`}>
                         <Menu size={36} />
                     </button>
-                    <NavLink to={"/"} className=" flex  items-baseline gap-1 leading-none cursor-pointe">
-                        <p className="text-3xl  fixelBold">Logo</p>
+                    <NavLink to={"/"} className=" flex items-end  gap-1 leading-none cursor-pointe">
+                       <img src={LogoIcon} className="max-w-[50px]" alt="" />
+                       <div className="">
+                        <p className="text-xl leading-none">Fashion </p>
+                        <p className="text-xl fixelBold leading-none">Shop</p>
+                       </div>
                         {/* <p className="fixelMedium">lvvvv</p> */}
                     </NavLink>
 
