@@ -1,6 +1,7 @@
 import React from 'react'
 import { BaggageClaim, History, LayoutDashboard, LockKeyhole, LogOut, MapPinned, Package, User, Users } from 'lucide-react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { Helmet } from 'react-helmet';
 function Admin() {
 
   const storedUser = localStorage.getItem("setUser");
@@ -11,6 +12,10 @@ function Admin() {
 
   return (
     <>
+             <Helmet>
+    <meta charSet="utf-8" />
+    <title>Admin</title>
+  </Helmet>
       {/* <h1 className='text-3xl text-center fixelMedium my-4'>Admin </h1> */}
       <section className='flex my-5 gap-3 mx-5'>
         {/* left box */}

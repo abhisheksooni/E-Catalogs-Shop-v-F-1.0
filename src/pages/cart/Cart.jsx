@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import React, { useEffect, useState } from 'react'
 import CartCard from './CartCard';
 import demoImg from "@/Images/men.jpg"
-
+import { Helmet } from 'react-helmet';
 
 import {
   Select,
@@ -99,7 +99,10 @@ function Cart() {
   // console.log("carts", carts);
   return (
     <>
-
+             <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Cart</title>
+      </Helmet>
       <div className=" w-full px-5 md:px-11 max-w-[1440px] mx-auto">
         {cartState?.TotalCarts < 1 ? (
           <div className=" flex flex-col justify-center items-center h-[100vh] ">

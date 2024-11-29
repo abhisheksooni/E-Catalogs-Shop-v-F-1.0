@@ -69,7 +69,7 @@ function CreateProduct() {
   }
 
   const ThumbnallHandla = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     // setThumbnallFile(e.target.files[0]);
 
     const filee = e.target.files

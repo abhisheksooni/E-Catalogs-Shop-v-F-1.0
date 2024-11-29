@@ -75,7 +75,10 @@ function Catalogues_Details() {
 
     return (
         <>
-
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Catalogues/Details</title>
+      </Helmet>
             {/* <section className='absolute bg-c5/20 w-full backdrop-blur-md'>
                 <img src={ImageZoom} className='max-w-[600px]' alt="" />
             </section> */}

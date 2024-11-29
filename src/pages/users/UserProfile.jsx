@@ -4,7 +4,7 @@ import { BaggageClaim, History, LayoutDashboard, LockKeyhole, LogOut, MapPinned,
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '@/redux/slices/authSlice.js';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
 function UserProfile() {
     const navigeter = useNavigate();
     const dispatch = useDispatch()
@@ -27,6 +27,10 @@ function UserProfile() {
 
     return (
         <>
+                 <Helmet>
+    <meta charSet="utf-8" />
+    <title>User</title>
+  </Helmet>
             <h1 className='text-3xl text-center fixelMedium my-6 ml-10'>Profile</h1>
 
             <section className=' lg:flex justify-center w-full fixelMedium mx-auto *:rounded-2xl gap-6 p-5 lg:p-10 '>

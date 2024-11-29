@@ -1,7 +1,12 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 function About() {
   return (<>
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>About Us</title>
+      </Helmet>
     <section className='max-w-[1440px] mx-auto *:mb-8 lg:*:mb-12 px-5 xl:px-0'>
 
       {/* section 1 */}

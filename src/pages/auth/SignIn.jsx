@@ -9,6 +9,7 @@ import googleIcon from "../../Images/login/google_icon.png"
 import { loginUser, } from '@/redux/slices/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
+import { Helmet } from 'react-helmet'
 
 
 
@@ -64,7 +65,12 @@ console.log("success",success);
 
 
   return (
-    <>
+    <>        
+         <Helmet>
+    <meta charSet="utf-8" />
+    <title>Sign-in</title>
+  </Helmet>
+
       <section className='flex flex-col justify-center items-center h-[85vh] max-w-[1980px]  md:h-[80vh]'>
         <div className="text-4xl mb-6 fixelBlack ">
           <h2>Sign in account</h2>

@@ -12,6 +12,7 @@ import { createOrder, findUserOrder } from '@/redux/slices/bookingOrderSlice.js'
 import { X } from 'lucide-react'
 import { load } from '@cashfreepayments/cashfree-js'
 import { deleteCart, ShowUserCarts } from '@/redux/slices/cartsSlice'
+import { Helmet } from 'react-helmet'
 
 function CheckOut() {
 
@@ -233,6 +234,10 @@ function CheckOut() {
 
     return (
         <>
+             <Helmet>
+        <meta charSet="utf-8" />
+        <title>Check Out</title>
+      </Helmet>
             <section className='max-w-[1440px] mx-auto px-5'>
                 {/* section 1 */}
                 <section className='bg-c7  w-full rounded-3xl text-center py-14 my-6 '>

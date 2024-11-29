@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearState, signupUser } from '@/redux/slices/authSlice.js'
 import bgimg from "../../Images/login/3318335.jpg"
 import googleIcon from "../../Images/login/google_icon.png"
-
+import { Helmet } from 'react-helmet';
 
 
 
@@ -50,6 +50,10 @@ function signup() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Sign-Up</title>
+      </Helmet>
       <section className='flex justify-center items-center h-[85vh] gap-20 max-w-[1980px] w-full'>
 
         <section className='flex flex-col justify-center items-center  '>
