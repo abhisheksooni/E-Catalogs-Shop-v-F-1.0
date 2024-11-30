@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createCart, ShowUserCarts } from '@/redux/slices/cartsSlice.js'
 import toast, { Toaster } from 'react-hot-toast';
 import { findProductOne } from '@/redux/slices/productSlice'
+import { Helmet } from 'react-helmet'
 function Catalogues_Details() {
     const dispatch = useDispatch();
     const { userId, data, loading, error, } = useSelector((state) => state.products)
@@ -77,7 +78,7 @@ function Catalogues_Details() {
         <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Catalogues/Details</title>
+        <title>Catalogue Details</title>
       </Helmet>
             {/* <section className='absolute bg-c5/20 w-full backdrop-blur-md'>
                 <img src={ImageZoom} className='max-w-[600px]' alt="" />

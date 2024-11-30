@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
 import {
     Select,
     SelectContent,
@@ -18,42 +17,15 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationPrevious,
-  } from "@/components/ui/pagination"
-  
+} from "@/components/ui/pagination"
 
 import ProductCard from '@/components/mainComponents/ProductCard'
-import { ArrowUpDown, Filter, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import axios from 'axios'
+import { ArrowUpDown } from 'lucide-react'
 import { products } from '@/redux/slices/productSlice'
 import { ShowUserCarts } from '@/redux/slices/cartsSlice'
 import Loding from '@/components/mainComponents/Loding/Loding'
+import { Helmet } from 'react-helmet'
 
-
-
-
-
-function PriceFilter() {
-    return (
-        <nav className='flex items-center justify-between px-10 my-5'>
-
-            <Select>
-
-                <SelectTrigger className="w-fit rounded-full lg:w-[180px] ">
-                    <div className=" lg:hidden"> <ArrowUpDown /> </div>
-                    <div className='hidden lg:inline-block'>
-                        <SelectValue placeholder="Price" />
-                    </div>
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="price">Low Prise</SelectItem>
-                    <SelectItem value="100 Prise">100 Prise</SelectItem>
-                    <SelectItem value="high Prise">high Prise</SelectItem>
-                </SelectContent>
-            </Select>
-        </nav>
-    )
-}
 
 function Catalogues() {
 
@@ -128,10 +100,10 @@ function Catalogues() {
     console.log("FilterAllProductHandle", findAllProduct);
     return (
         <>
-             <Helmet>
-        <meta charSet="utf-8" />
-        <title>Catalogues/{params.category}</title>
-      </Helmet>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Catalogues/{params.category}</title>
+            </Helmet>
             <section className='  mx-auto px-5 lg:px-0 max-w-[1440px] w-full my-8'>
 
                 {/* section 1 */}
@@ -153,32 +125,32 @@ function Catalogues() {
 
                             cataloguesData?.map((p) => (
                                 <ProductCard key={p._id} ProductName={p.title} Price={p.price} ProductImage={p.images[0]} slug={p.slug} />
-                          ))
+                            ))
                         }
 
                     </section>
                     {/* section 3 */}
                     <section className='w-full text-center'>
-                    <Pagination>
-  <PaginationContent>
-    <PaginationItem>
-      <PaginationPrevious href="#" />
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationLink href="#">1</PaginationLink>
-      <PaginationLink href="#">2</PaginationLink>
-      <PaginationLink href="#">3</PaginationLink>
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationEllipsis />
-    </PaginationItem>
-    <PaginationItem>
-      <PaginationNext href  />
-    </PaginationItem>
-  </PaginationContent>
-</Pagination>
+                        <Pagination>
+                            <PaginationContent>
+                                <PaginationItem>
+                                    <PaginationPrevious href="#" />
+                                </PaginationItem>
+                                <PaginationItem>
+                                    <PaginationLink href="#">1</PaginationLink>
+                                    <PaginationLink href="#">2</PaginationLink>
+                                    <PaginationLink href="#">3</PaginationLink>
+                                </PaginationItem>
+                                <PaginationItem>
+                                    <PaginationEllipsis />
+                                </PaginationItem>
+                                <PaginationItem>
+                                    <PaginationNext href />
+                                </PaginationItem>
+                            </PaginationContent>
+                        </Pagination>
 
-                       
+
                     </section>
                 </>}
 

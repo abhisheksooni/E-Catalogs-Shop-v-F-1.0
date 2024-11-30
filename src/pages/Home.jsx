@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../App.css"
-import { Plus, Minus, ArrowUpRight, Grid } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import demoImg from "@/Images/men.jpg"
-import ArrowButton from '@/components/mainComponents/ArrowButton';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import axios from 'axios';
-import ProductCard from '@/components/mainComponents/ProductCard';
 import { ShowUserCarts } from '@/redux/slices/cartsSlice';
 import { products } from '@/redux/slices/productSlice';
 import Loding from '@/components/mainComponents/Loding/Loding';
@@ -29,14 +14,14 @@ function Home() {
 
   const dispatch = useDispatch()
   const { data, loading } = useSelector(state => state.products)
+
   // carts total navbat
   useEffect(() => {
     dispatch(ShowUserCarts())
-
   }, [])
+
   useEffect(() => {
     dispatch(products("All"))
-
   }, [])
 
   useEffect(() => {
@@ -51,7 +36,6 @@ function Home() {
   const [hoverSell, SetHoverSell] = useState(false);
   const [cataloguesData, setCataloguesData] = useState(null)
 
-  let img = "https://image.hm.com/ffc/share/assets/2024/6030/6030-3x2-Panthera-Top-Image-M.png?imwidth=2160"
 
   // const selector = useSelector((state)=> state.click)
   // const dispatch = useDispatch()
@@ -70,14 +54,8 @@ function Home() {
   const [kidsCategoryHover, setKidsCategoryHover] = useState(false)
 
 
-  function CategoryHover() {
-
-  }
-
 
   // console.log("loading", loading);
-
-
 
   return (
     <>
