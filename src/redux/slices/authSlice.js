@@ -17,7 +17,7 @@ export const signupUser = createAsyncThunk(
     }
   }
 )
-
+ 
 
 export const loginUser = createAsyncThunk("loginUser", async (userLoginData, { rejectWithValue }) => {
   try {
@@ -38,6 +38,15 @@ export const updateUser = createAsyncThunk("updateUser", async (updateUserData, 
     return rejectWithValue(error);
   }
 })
+export const googleLogin = createAsyncThunk("googleLogin", async ( googleLogin,{ rejectWithValue }) => {
+  try {
+    // window.open("http://localhost:8088/auth/google","_self")
+    // let api =  await axios.get("http://localhost:8088/api")
+    // return api.data
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+})
 
 
 
@@ -46,12 +55,15 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: [],
+    token: '',
+    isAuthenticated :false,
     localUser: null,
     loading: false,
     error: null,
     login: false,
     isAdmin: false,
-    success:false
+    success:Boolean,
+    message:""
   },
 
   reducers: {
@@ -114,6 +126,8 @@ export const authSlice = createSlice({
         // {"success":false,"message":"user not exgisted"}
         // let data = state.user = action.payload;
         let data = action.payload;
+        console.log("login data",data);
+        
         if (data.success===false) {
           state.success = false
   
@@ -126,6 +140,8 @@ export const authSlice = createSlice({
 
         }else{
           state.success = true
+          state.message = action.payload.message
+          state.isAdmin = action.payload.isAdmin
           localStorage.setItem("setUser", JSON.stringify(data))
           const storedUser = localStorage.getItem("setUser");
           const userData = JSON.parse(storedUser)
@@ -137,10 +153,34 @@ export const authSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false
        state.success = false
-        
+        state.message = action.payload.response.data.message
+        console.log("login data",action.payload);
         // state.error = action.payload;
         state.error = 'Something went wrong authslice in login errer';
       })
+
+
+      // google
+      .addCase(googleLogin.fulfilled, (state, action) => {
+        console.log("googleLogin",action.payload);
+        
+        if (action.payload) {
+          state.token = action.payload.token;  // Assuming the backend response has a `token`
+          state.isAuthenticated = true;
+          // state.user = action.payload.user;    // Assuming user info is in the payload
+        } else {
+          // state.token = null;
+          state.isAuthenticated = false;
+          // state.user = null;
+        }
+      })
+      // Handle the rejected case (for errors)
+      .addCase(googleLogin.rejected, (state, action) => {
+        console.error("Google login failed:", action.payload);
+        // state.token = null;
+        state.isAuthenticated = false;
+        // state.user = null;
+      });
 
   }
 
