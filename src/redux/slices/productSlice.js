@@ -25,7 +25,7 @@ export const createProduct = createAsyncThunk("createProduct", async (productFor
 export const products = createAsyncThunk("products", async (findData, { rejectWithValue }) => {
     try {
         const response = await axios.get(`http://localhost:8088/api/v1/products/products/${findData}`)
-        return response.data.products
+        return response.data
     } catch (error) {
         return rejectWithValue(error);
     }
@@ -66,6 +66,7 @@ export const deleteProduct = createAsyncThunk("deleteProduct", async (deleteProd
 const productSlice = createSlice({
     name: "products",
     initialState: {
+        success: false,
         loading: true,
         error: null,
         userId:userId?userId:"",
@@ -81,12 +82,15 @@ const productSlice = createSlice({
                 state.loading = true
             })
             .addCase(products.fulfilled, (state, action) => {
-                if (action.payload) {
-                    state.data = action.payload
+                console.log("payload",action.payload);
+                
+                if (action.payload.success === true) {
+                    state.data = action.payload.products
+                    state.success = action.payload.success
                     state.loading = false
                 }else{
-                    state.loading = false
-
+                    state.loading = true
+                    state.success = false
                 }
                 // state.data = action.payload
             })
