@@ -53,16 +53,38 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-  			'c1': '#FAFBFC',
-  			'c2': '#1A1B21',
-  			'c3': '#2140A6',
-  			'c4': '#A62140',
-  			'c5': '#333742',
-  			'c6': '#EFF0F3',
-  			'c7': '#EFF0F4',
-  			'text1': '#898D9E',
-  			'textcolor1': '#1E1E1E',
-  			'textcolor2': '#575757'
+  			c1: '#FAFBFC',
+  			c2: '#1A1B21',
+  			c3: '#2140A6',
+  			c4: '#A62140',
+  			c5: '#333742',
+  			c6: '#EFF0F3',
+  			c7: '#EFF0F4',
+  			text1: '#898D9E',
+  			textcolor1: '#1E1E1E',
+  			textcolor2: '#575757'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

@@ -1,21 +1,9 @@
 import { Button } from '@/components/ui/button';
 import React, { useEffect, useState } from 'react'
 import CartCard from './CartCard';
-import demoImg from "@/Images/men.jpg"
 import { Helmet } from 'react-helmet';
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
-import Products from '../admin/Dashbord/Products';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteCart, ShowUserCarts } from '@/redux/slices/cartsSlice';

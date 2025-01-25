@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearState, signupUser } from '@/redux/slices/authSlice.js'
-import bgimg from "../../Images/login/3318335.jpg"
 import googleIcon from "../../Images/login/google_icon.png"
 import { Helmet } from 'react-helmet';
 

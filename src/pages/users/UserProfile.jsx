@@ -1,7 +1,7 @@
 
 import React from 'react'
-import { BaggageClaim, History, LayoutDashboard, LockKeyhole, LogOut, MapPinned, Package, User } from 'lucide-react'
-import { useDispatch, useSelector } from 'react-redux'
+import { BaggageClaim, LayoutDashboard, LogOut, MapPinned, Package, User } from 'lucide-react'
+import { useDispatch } from 'react-redux'
 import { logout } from '@/redux/slices/authSlice.js';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet';

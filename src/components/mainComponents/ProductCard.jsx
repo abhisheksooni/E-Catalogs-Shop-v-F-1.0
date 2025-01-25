@@ -19,7 +19,7 @@ function ProductCard({ ProductName, Price, ProductImage, slug,key }) {
         <div className=" pl-0.5 md:pl-2">
           <p className='pt-1.5 fixelMedium  md:text-xl text-c5 uppercase'>{ProductName.substring(0, 14)} {ProductName.length > 14 ? "..." : ""}</p>
           <p className='pt-1.5 fixelMedium hidden md:gird md:text-xl text-c5 uppercase'>{ProductName.substring(0, 20)} {ProductName.length > 20 ? "..." : ""}</p>
-          <p className='text-text1'> Rs. {Price}</p>
+          <p className='text-text1'> Rs. {Price} <s className='text-sm ml-1'>{Price + 199}</s></p>
 
         </div>
       </NavLink>

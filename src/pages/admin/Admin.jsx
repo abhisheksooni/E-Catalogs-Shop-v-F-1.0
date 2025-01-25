@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaggageClaim, History, LayoutDashboard, LockKeyhole, LogOut, MapPinned, Package, User, Users } from 'lucide-react'
+import { BaggageClaim, LayoutDashboard, LogOut, Package, Users } from 'lucide-react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 function Admin() {

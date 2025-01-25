@@ -1,11 +1,6 @@
 .no-scrollbar::-webkit-scrollbar { 
   display: none; 
 } 
-
-
-
-
-
 .Hero-section-1{
     background-image: url(https://cdn.prod.website-files.com/6607ad03b43fbbc8045dfbf0/663398b1a962fb8ad4eebd03_hero-image.jpg);
 

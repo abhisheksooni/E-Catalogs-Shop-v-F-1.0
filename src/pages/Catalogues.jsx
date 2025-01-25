@@ -3,13 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
-import {
     Pagination,
     PaginationContent,
     PaginationEllipsis,
@@ -20,12 +13,11 @@ import {
 } from "@/components/ui/pagination"
 
 import ProductCard from '@/components/mainComponents/ProductCard'
-import { ArrowUpDown } from 'lucide-react'
 import { products } from '@/redux/slices/productSlice'
 import { ShowUserCarts } from '@/redux/slices/cartsSlice'
 import Loding from '@/components/mainComponents/Loding/Loding'
 import { Helmet } from 'react-helmet'
-
+import toast from 'react-hot-toast'
 
 function Catalogues() {
 
@@ -116,7 +108,8 @@ function Catalogues() {
                             <button onClick={FilterAllProductHandle} className={`${params.category === "All" ? "bg-c5 text-c1" : "bg-c1 text-c5 "}`}  >ALL</button>
                             <button onClick={FilterMaleProductHandle} className={`${params.category === "Male" ? "bg-c5 text-c1" : "bg-c1 text-c5 "}`} >MENS</button>
                             <button onClick={FilterFemaleProductHandle} className={`${params.category === "Female" ? "bg-c5 text-c1" : "bg-c1 text-c5 "}`} >WOMENS</button>
-                            {/* <Button>KIDS</Button> */}
+                            {/* <button onClick={()=>toast("👶 Coming soon")} className={`bg-slate-200 text-white`} >KIDS</button> */}
+                           {/* <button onClick={()=>toast("👶 Coming soon")} className={`${params.category === "Female" ? "bg-c5 text-c1" : "bg-c1 text-c5 "}`} >KIDS</button> */}
                         </div>
                     </section>
                     {/* section 2 */}

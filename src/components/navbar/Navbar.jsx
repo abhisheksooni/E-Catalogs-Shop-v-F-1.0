@@ -1,22 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { ShoppingCart, AlignJustify, X, Plus, Briefcase, User, Menu, LogOut, LayoutDashboard, BaggageClaim, Package } from "lucide-react";
+import { X, Briefcase, User, Menu } from "lucide-react";
 import LogoIcon from "../../Images/logo/LogoIcon.png"
 import { NavLink, useNavigate } from 'react-router-dom'
-import { gsap } from "gsap";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { RadioGroup } from "@radix-ui/react-dropdown-menu";
-import { RadioGroupItem } from "@radix-ui/react-radio-group";
 import { logout } from "@/redux/slices/authSlice.js";
-import { ShowUserCarts } from "@/redux/slices/cartsSlice";
 
 
 

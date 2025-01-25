@@ -1,10 +1,8 @@
 
-import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
 
-import { MoveLeft, Pencil, Trash2 } from 'lucide-react';
+import { MoveLeft } from 'lucide-react';
 import axios from 'axios';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import toast from 'react-hot-toast';
 

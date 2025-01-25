@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@radix-ui/react-dropdown-menu'
-import { NavLink } from 'react-router-dom'
-import imgdemo from "@/Images/men.jpg"
 import { Button } from '@/components/ui/button'
-import { Checkbox } from "@/components/ui/checkbox"
 import axios from 'axios'
 import OrderConfirm from './OrderConfirm'
 import { useDispatch, useSelector } from 'react-redux'
-import { createOrder, findUserOrder } from '@/redux/slices/bookingOrderSlice.js'
+import { createOrder } from '@/redux/slices/bookingOrderSlice.js'
 import { X } from 'lucide-react'
-import { load } from '@cashfreepayments/cashfree-js'
 import { deleteCart, ShowUserCarts } from '@/redux/slices/cartsSlice'
 import { Helmet } from 'react-helmet'
 
@@ -144,18 +140,18 @@ function CheckOut() {
         e.preventDefault()
 
         try {
-            let sessionId = await getsectionId()
-            let checkoutOptions = {
-                paymentSessionId: sessionId,
-                redirectTarget: "_modal"
-            };
+            // let sessionId = await getsectionId()
+            // let checkoutOptions = {
+            //     paymentSessionId: sessionId,
+            //     redirectTarget: "_modal"
+            // };
 
-            const cashfree = await load({ mode: "sandbox" })
+            // const cashfree = await load({ mode: "sandbox" })
 
-            cashfree.checkout(checkoutOptions).then(() => {
-                console.log("payment initialized");
-                verifiedPayment(orderId)
-            })
+            // cashfree.checkout(checkoutOptions).then(() => {
+            //     console.log("payment initialized");
+            //     verifiedPayment(orderId)
+            // })
             let orderForm = {
                 userId,
                 productId: carts.map(i => i.productId),
@@ -163,8 +159,10 @@ function CheckOut() {
                 // quantity:carts.userId
             }
 
+            console.log("orderForm",orderForm);
+            
             dispatch(createOrder(orderForm))
-            carts.map((id) => deleteProductCart(id.productId))
+            // carts.map((id) => deleteProductCart(id.productId))
 
         } catch (error) {
             console.log("Error during checkout", error);
@@ -226,7 +224,7 @@ function CheckOut() {
 
 
     // console.log("cartProducts", cartProducts);
-    // console.log("cartsslice", cart);
+    console.log("cartsslice", cart);
     // console.log("createOrderData", createOrderData);
     // console.log("orderId", orderId);
     // console.log("orderForm", discount);

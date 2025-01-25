@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useEffect } from "react";
 
 // local store set up
 const storedUser = localStorage.getItem("setUser");

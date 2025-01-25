@@ -5,6 +5,7 @@ const storedUser = localStorage.getItem("setUser");
 const userData = JSON.parse(storedUser)
 const userId = userData?.user._id;
 
+// https://e-catalogs-shop-back-end-v-1-0.onrender.com/
 
 export const signupUser = createAsyncThunk(
   "signupUser",

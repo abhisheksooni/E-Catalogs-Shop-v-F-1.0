@@ -1,14 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
-import AdminProductCard from './utils/AdminProductCard'
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { MoveLeft, Pencil, Trash2 } from 'lucide-react';
-import imgsempla from "@/Images/men.jpg"
+import { Outlet } from 'react-router-dom'
 import axios from 'axios';
-import { Select } from '@/components/ui/select'
-import CreateProduct from './ProductsHandle/CreateProduct'
 
 function Products() {
 

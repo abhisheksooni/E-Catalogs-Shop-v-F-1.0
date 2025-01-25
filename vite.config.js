@@ -12,6 +12,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',  // Binds Vite to all available network interfaces
-    port: 5173,        // You can change the port if needed
+    // port: 5174,        // You can change the port if needed
   },
 })

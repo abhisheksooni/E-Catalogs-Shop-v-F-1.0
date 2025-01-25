@@ -1,8 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, Package } from "lucide-react";
-import sempalImg from "@/Images/main.jpg";
-import axios from "axios";
+import { ArrowUpRight, Package } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { findUserOrder } from "@/redux/slices/bookingOrderSlice.js";

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { BaggageClaim, Heart, Minus, Plus } from 'lucide-react'
-import axios from 'axios'
+import { BaggageClaim, Minus, Plus } from 'lucide-react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { createCart, ShowUserCarts } from '@/redux/slices/cartsSlice.js'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { findProductOne, products } from '@/redux/slices/productSlice'
 import { Helmet } from 'react-helmet'
 import star1 from "@/Images/star.png"
@@ -156,7 +155,7 @@ function Catalogues_Details() {
 
                     <div className="mb-3">
                         <span className=' py-1.5 text-3xl md:text-4xl fixelMedium '>{"Rs. " + cataloguesData?.price} </span>
-                        <span className=' text-c5/50 py-1.5 text-xl md:text-2xl fixelMedium ' > <s>{cataloguesData?.price}</s></span>
+                        <span className=' text-c5/50 py-1.5 text-xl md:text-2xl fixelMedium ' > <s>{cataloguesData?.price + 199}</s></span>
                     </div>
 
                     <div className=" flex gap-2 my-3 mb-8">

@@ -54,7 +54,8 @@ export const createOrder = createAsyncThunk("order/createOrder",
     async (orderData, { rejectWithValue }) => {
         try {
             const response = await axios.post(`http://localhost:8088/api/v1/order/`, orderData)
-            // console.log(response);
+            // console.log("createOrder",response);
+            // console.log("orderData",orderData);
             
             return response.data
         } catch (error) {
@@ -80,7 +81,7 @@ const orderSlice = createSlice({
         TotalOrders: 0,
         loading: true,
         error: null,
-        orderStatus: null,
+        orderStatus: [],
         order: [],
         allOrders: [],
         createOrderData:[]

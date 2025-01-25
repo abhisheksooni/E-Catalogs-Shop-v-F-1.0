@@ -17,7 +17,6 @@ import PersonalData from './pages/users/userDitails/PersonalData';
 
 import ChangePassrord from './pages/users/userDitails/ChangePassrord';
 import DeliveryAddresses from './pages/users/userDitails/DeliveryAddresses';
-import OrderHistory from './pages/users/userDitails/OrderHistory';
 import Cartmenu from './pages/users/userDitails/Cart';
 
 import Dashbord from './pages/users/Dashbord';
@@ -37,6 +36,8 @@ import UsersOrders from './pages/users/UsersOrders';
 
 import { Toaster } from 'react-hot-toast';
 import UserOrders from './pages/users/userDitails/UserOrders';
+import FAQS from './pages/FAQS';
+// import PrivacyPolicy from './pages/PrivacyPolicy';
 
 
 
@@ -58,6 +59,8 @@ function App() {
             <Route path='*' element={<Page404 />} />
             <Route path='about-us' element={<About />} />
             <Route path='contect-us' element={<Contect />} />
+            <Route path='FAQS' element={<FAQS/>}  />
+            {/* <Route path='Privacy-Policy' element={<PrivacyPolicy/>}  /> */}
 
             {/* cart */}
             <Route path='shoping-cart' element={<Cart />} />

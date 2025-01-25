@@ -11,13 +11,10 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import { MoveLeft, Pencil, Trash2 } from 'lucide-react';
-import imgsempla from "@/Images/men.jpg"
-import axios from 'axios';
-import CreateProduct from './CreateProduct';
-import { deleteProduct, products } from '@/redux/slices/productSlice.js';
+import { Pencil, Trash2 } from 'lucide-react';
+import { products } from '@/redux/slices/productSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 
