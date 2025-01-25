@@ -16,26 +16,35 @@ function Footer() {
           </ul>
           <ul className=' text-text1 hover:*:text-c2 *:flex *:items-center *:gap-2 *:my-3 cursor-pointer'>
             <p className='text-c2 text-xl'>About the store</p>
-            <li >About us</li>
-            <li> Coustomer reviews</li>
-            <li>Contects</li>
-            <li></li>
+            <li > <NavLink to={"about-us"}>About us</NavLink> </li>
+            {/* <li> Coustomer reviews</li> */}
+            
+            <li><NavLink to={"contect-us"}>Contect</NavLink></li>
+            <li><NavLink to={"FAQS"}>FAQs</NavLink></li>
+            {/* <li><NavLink to={"Privacy-Policy"}>Privacy Policy</NavLink></li> */}
           </ul>
-          <ul className=' text-text1 hover:*:text-c2 *:flex *:items-center *:gap-2 *:my-3 cursor-pointer'>
+          {/* <ul className=' text-text1 hover:*:text-c2 *:flex *:items-center *:gap-2 *:my-3 cursor-pointer'>
             <p className='text-c2 text-xl'>To buyers</p>
             <li >Delivery and payment</li>
             <li>Dimensional grid</li>
             <li>Exchange and return</li>
             <li>Public offer</li>
-          </ul>
+          </ul> */}
 
           <div className="">
             <p className='text-c2 text-xl pb-4 my-3'>Catalogue</p>
             <ul className='flex flex-wrap *:px-4 *: *:py-1 *:my-2 *:border-2 *:border-text1 hover:*:border-c2 *:rounded-full text-text1 hover:*:text-c2  *:cursor-pointer justify-evenly gap-2'>
-              <li>Kits</li>
-              <li>Clumsy</li>
-              <li>Pants</li>
-              <li>Suits</li>
+
+              <li><NavLink to={"/catelogues/Male"}>
+                Men
+              </NavLink></li>
+              <li><NavLink to={"/catelogues/Female"}>
+              Woman
+              </NavLink></li>
+              <li>
+              Kids
+              </li>
+             
 
             </ul>
           </div>
