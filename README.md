@@ -1,5 +1,7 @@
 # MERN E-commerce Project
 
+# [Demo Video link](https://drive.google.com/file/d/1ItCbIEcMXO_rSYIeOC7rkNDGR4ajE1BX/view)
+
 ## Description 
 This project is a fully functional E-commerce platform built using the MERN stack (MongoDB, Express.js, React, Node.js). The platform allows users to browse products, add items to their cart, and make purchases. It also includes an admin panel to manage products, orders, and users.
 
@@ -21,5 +23,5 @@ This project is a fully functional E-commerce platform built using the MERN stac
 * Database: MongoDB
 * Authentication: JWT (JSON Web Tokens)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
